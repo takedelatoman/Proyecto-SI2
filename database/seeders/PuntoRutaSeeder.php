@@ -17,7 +17,8 @@ class PuntoRutaSeeder extends Seeder
         $punto = new PuntoRuta();
         $punto->latitud  = 351353.55;
         $punto->altitud  = 351353.55;
-        $punto->id_linea = 1;    /*  AQUI SE PONE EL ID DE LA LINE
-AR EL IDDD_ NO  RO */        $punto->save();
+        $punto->id_linea = 1;
+        $punto->save();    
+        /*  AQUI SE PONE EL ID DE LA LINE AR EL IDDD_ NO  RO */        
     }
 }
