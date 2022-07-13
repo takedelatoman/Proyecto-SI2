@@ -63,7 +63,7 @@
                                 <td>Chofer</td>
                             @endif
                             <td>
-                                <form action="{{ route('users.destroy', $use    r) }}" method="post">
+                                <form action="{{ route('users.destroy', $user) }}" method="post">
                                     <!--<a class="btn btn-warning btn-sm text-light" href="#">-->
                                     <a class="btn btn-warning btn-sm text-light rounded-pill"
                                         href="{{ route('users.show', $user->id) }}">

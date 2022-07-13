@@ -75,9 +75,9 @@
                             <td>
                                 <form action="{{ route('micros.destroy', $micro->id) }}" method="post">
                                     <!--<a class="btn btn-warning btn-sm text-light" href="#">-->
-                                    {{-- <a class="btn btn-warning btn-sm text-light rounded-pill"
+                                    <a class="btn btn-warning btn-sm text-light rounded-pill"
                                         href="{{ route('micros.show', $micro->id) }}">
-                                        <i class="fas fa-eye"></i></a> --}}
+                                        <i class="fas fa-eye"></i></a>
 
                                     <a href="{{ route('micros.edit', $micro->id) }}"
                                         class="btn btn-primary btn-sm text-light rounded-pill">

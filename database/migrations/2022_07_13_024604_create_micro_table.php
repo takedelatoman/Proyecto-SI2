@@ -21,7 +21,7 @@ class CreateMicroTable extends Migration
             $table->string('num_interno');
             $table->string('foto')->nullable();
             $table->date('fecha_asignacion');
-            $table->date('fecha_baja');
+            $table->date('fecha_baja')->nullable();
             $table->boolean('disponible');
             $table->unsignedBigInteger('id_linea')->nullable();
             $table->unsignedBigInteger('id_user')->nullable();

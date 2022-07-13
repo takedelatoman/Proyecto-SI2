@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="form-body">
-        <img src="{{ asset('img/logo.png') }}" alt="user-login">
-        <p class="text">Bienvenido a TuMejorRuta</p>
-        <p class="text">           <p>Aplicación relacionada con los transportes públicos para ciudades inteligentes.</p>     </p>
+        <img src="{{ asset('img/logo.jpg') }}" alt="user-login">
+        <p class="text">Bienvenido a "TuMejorRuta"</p>
+       
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <input type="text" placeholder="Email" name="email">

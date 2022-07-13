@@ -61,4 +61,5 @@ Route::post('micros/store', [App\Http\Controllers\MicroController::class, 'store
 Route::get('micros/edit/{id}', [App\Http\Controllers\MicroController::class, 'edit'])->name('micros.edit');
 Route::put('micros/update/{id}', [App\Http\Controllers\MicroController::class, 'update'])->name('micros.update');
 Route::delete('micros/{id}', [App\Http\Controllers\MicroController::class, 'destroy'])->name('micros.destroy');
+Route::get('micros/show/{id}', [App\Http\Controllers\MicroController::class, 'show'])->name('micros.show');
 

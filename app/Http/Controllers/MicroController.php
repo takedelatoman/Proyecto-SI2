@@ -46,9 +46,17 @@ class MicroController extends Controller
     public function edit($id)
     {
         $micro = Micro::find($id);
-        $linea = Linea::where('id', $micro->id_linea)->first();
-        $user = User::where('id', $micro->id_user)->first();
-        return view('micros.edit', compact('micro','user','linea'));   
+        $lineas = Linea::all();
+        $users = User::all();
+        return view('micros.edit', compact('micro','users','lineas'));   
+    }
+
+    public function show($id)
+    {
+        $micro = Micro::find($id);
+        $lineas = Linea::all();
+        $users = User::all();
+        return view('micros.show', compact('micro','users','lineas'));   
     }
 
     public function update(Request $request, $id)

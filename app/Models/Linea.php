@@ -15,6 +15,7 @@ class Linea extends Model
         'foto'
     ];
 
+
     public function micro(){
         return $this->hasMany(Micro::class,'id_linea');
     }
