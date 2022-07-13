@@ -15,8 +15,8 @@ class CreatePuntorutaTable extends Migration
     {
         Schema::create('puntoruta', function (Blueprint $table) {
             $table->id();
-            $table->string('latitud');
-            $table->string('altitud');
+            $table->double('latitud');
+            $table->double('altitud');
             $table->unsignedBigInteger('id_linea')->nullable();
             $table->foreign('id_linea')->on('linea')->references('id')->onDelete('cascade');
             $table->timestamps();

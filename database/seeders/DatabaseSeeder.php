@@ -17,6 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersSeeder::class);
         $this->call(LineaSeeder::class);
         $this->call(MicroSeeder::class);
-        
+        $this->call(PuntoRutaSeeder::class);
     }
 }
