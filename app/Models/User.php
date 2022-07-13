@@ -21,6 +21,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'ci',
+        'fecha_nac',
+        'cod_chofer',
+        'cod_admin',
+        'foto'
+
     ];
 
     /**
@@ -41,4 +47,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+   /*  public function micro(){
+        return $this->hasMany(Micro::class,'id_user');
+    }
+ */
+
 }
