@@ -32,7 +32,7 @@
             @section('js')
             <script src="{{ asset('js/usuario.js') }}"></script>
             @endsection
-            <center>
+            <!-- <center>
                 {{-- separador --}}
                 <div class="form-group col-md-3">
                     <img width="200" height="200" class="img-circle" id="foto">
@@ -48,81 +48,48 @@
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
-            </center>
-            <div class="row">
+            </center> -->
+            <div class="row" style="padding-bottom: 0.5rem; padding-top: 0.7rem">
                 <div class="col-md-6">
-                    <label for="name">Ingrese el nombre de usuario</label>
+                    <label for="name">Nombre Completo</label>
                     <input type="text" name="name" class="form-control" value="" placeholder="Nombres y Apellidos " required>
                 </div>
                 @error('name')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
-
-
                 <div class="col-md-3">
-                    <label for="sexo">Seleccione un sexo</label>
-                    <select name="sexo" id="sexo" class="form-control" onchange="habilitar()" placeholder="sexo" required>
+                    <label for="direccion">Carnet de Identidad</label>
+                    <input type="text" name="ci" class="form-control" value="" maxlength="30" size="0" pattern="{5,30}" placeholder="dirección del usuario" required>
+                </div>
+
+                <!-- <div class="col-md-3">
+                    <label for="sexo">Carnet de Identidad</label>
+                    <select name="sexo" id="ci" class="form-control" onchange="habilitar()" placeholder="sexo" required>
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
                     </select>
-                </div>
-                @error('sexo')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
-
+                </div> -->
                 <div class="col-md-3">
-                    <label for="roles">Seleccione un rol</label>
-                    <select name="roles" id="select-roles" class="form-control" onchange="habilitar()" required>
-                        @foreach ($roles as $rol)
-                        <option value="{{ $rol->id }}">{{ $rol->name }}</option>
-                        @endforeach
-                    </select>
-                    @error('roles')
-                    <span class="text-danger">{{ $message }}</span>
-                    @enderror
+                    <label for="direccion">Fecha de Nacimiento</label>
+                    <input type="date" name="fecha_nac" class="form-control" value="" maxlength="30" size="0" pattern="{5,30}" placeholder="dirección del usuario" required>
                 </div>
+                
+            
             </div>
 
 
-            <div class="row">
+        
+
+            <div class="row" style="padding-bottom: 0.5rem">
                 <div class="col-md-6">
-                    <label for="direccion">Ingrese la dirección</label>
-                    <input type="text" name="direccion" class="form-control" value="" maxlength="30" size="0" pattern="{5,30}" placeholder="dirección del usuario" required>
-                </div>
-                @error('direccion')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
-
-                <div class="col-md-3">
-                    <label for="edad">Ingrese la edad</label>
-                    <input name="edad" type="tel" size="2" maxlength="2" pattern="[0-9-+()]{2,2}"
-                        class="form-control" value="" placeholder="Edad del ususario" required>
-                    @error('edad')
-                    <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-
-
-
-                <div class="col-md-3">
-                    <label for="telefono">Ingrese el teléfono</label>
-                    <input name="telefono" type="tel" placeholder="+591XXXXXXXXX" class="form-control" value="{{ old('telefono') }}" size="0" maxlength="9" pattern="[0-9-+()]{6,9}" placeholder="+591XXXXXXXXX" require>
-                    @error('telefono')
-                    <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="email">Ingrese el correo electronico</label>
+                    <label for="email">Correo Eectronico</label>
                     <input type="text" name="email" class="form-control" value="" placeholder="Ecriba el correo" required>
                     @error('email')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="col-md-6">
-                    <label for="password">Ingrese la contraseña</label>
+                    <label for="password">Contraseña</label>
                     <input type="password" name="password" class="form-control" value="" placeholder="***********" required>
                     @error('password')
                     <span class="text-danger">{{ $message }}</span>
@@ -130,8 +97,22 @@
                 </div>
             </div>
 
+            <div class="row" style="padding-bottom: 0.5rem">
+                    
+                    <div class="col-md-12">
+                        <label for="direccion">Roles</label>
+                        <br>
+                        <label><input type="checkbox" name="cod_admin" id="cod_admin" value="1" > Administrador</label><br>
 
-            <br>
+                        <label><input type="checkbox" name="cod_chofer" id="cod_chofer" value="1" > Chofer</label><br>
+                    </div>
+                    
+                </div>
+
+               
+
+
+      
 
             <center>
                 <button class="btn btn-primary btb-sm text-light" type="submit">Crear Usuario</button>

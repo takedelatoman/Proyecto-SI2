@@ -10,7 +10,9 @@ class Linea extends Model
     use HasFactory;
     protected $table = 'linea'; //usa el nombre de la base de datos 
     protected $fillable = [
-        'numero'
+        'numero',
+        'direccion',
+        'foto'
     ];
 
     public function micro(){

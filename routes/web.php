@@ -45,3 +45,20 @@ Route::get('users/edit/{id}', [App\Http\Controllers\UserController::class, 'edit
 Route::put('users/update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
 Route::get('users/show/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('users.show');
 Route::delete('users/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');
+
+//LINEA
+Route::get('lineas/index', [App\Http\Controllers\LineaController::class, 'index'])->name('lineas.index');
+Route::get('lineas/create', [App\Http\Controllers\LineaController::class, 'create'])->name('lineas.create');
+Route::post('lineas/store', [App\Http\Controllers\LineaController::class, 'store'])->name('lineas.store');
+Route::get('lineas/edit/{id}', [App\Http\Controllers\LineaController::class, 'edit'])->name('lineas.edit');
+Route::put('lineas/update/{id}', [App\Http\Controllers\LineaController::class, 'update'])->name('lineas.update');
+Route::delete('lineas/{id}', [App\Http\Controllers\LineaController::class, 'destroy'])->name('lineas.destroy');
+
+//MICROS
+Route::get('micros/index', [App\Http\Controllers\MicroController::class, 'index'])->name('micros.index');
+Route::get('micros/create', [App\Http\Controllers\MicroController::class, 'create'])->name('micros.create');
+Route::post('micros/store', [App\Http\Controllers\MicroController::class, 'store'])->name('micros.store');
+Route::get('micros/edit/{id}', [App\Http\Controllers\MicroController::class, 'edit'])->name('micros.edit');
+Route::put('micros/update/{id}', [App\Http\Controllers\MicroController::class, 'update'])->name('micros.update');
+Route::delete('micros/{id}', [App\Http\Controllers\MicroController::class, 'destroy'])->name('micros.destroy');
+

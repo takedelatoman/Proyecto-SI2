@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>Formulario Login Animado</title>
+    <title>TuMejorRuta</title>
 </head>
 <body>
     <div class="form-body">
         <img src="{{ asset('img/logo.png') }}" alt="user-login">
         <p class="text">Bienvenido a TuMejorRuta</p>
+        <p class="text">           <p>Aplicación relacionada con los transportes públicos para ciudades inteligentes.</p>     </p>
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <input type="text" placeholder="Email" name="email">

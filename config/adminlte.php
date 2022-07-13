@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'usermenu_enabled' => true,
+    'usermenu_enabled' => false,
     'usermenu_header' => false,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
@@ -78,28 +78,7 @@ return [
     |
     | Here we change the layout of your admin panel.
     |
-    | For detailed instructions you can look the layout section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Layout-and-Styling-Configuration
-    |
-    */
 
-    'layout_topnav' => null,
-    'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
-    'layout_fixed_footer' => null,
-    'layout_dark_mode' => null,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Views Classes
-    |--------------------------------------------------------------------------
-    |
-    | Here you can change the look and behavior of the authentication views.
-    |
-    | For detailed instructions you can look the auth classes section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Layout-and-Styling-Configuration
-    |
     */
 
     'classes_auth_card' => 'card-outline card-primary',
@@ -123,14 +102,14 @@ return [
 
     'classes_body' => '',
     'classes_brand' => '',
-    'classes_brand_text' => '',
+    'classes_brand_text' => 'navy-navy',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'navy-blue-info elevation-4',
-    'classes_sidebar_nav' => 'brand-dark',
-    'classes_topnav' => 'navy-navy navbar-navy-blue',
-    'classes_topnav_nav' => 'navy-blue-expand',
+    'classes_sidebar' => 'navbar-navy elevation-4',
+    'classes_sidebar_nav' => 'navy-navy',
+    'classes_topnav' => 'accent-dark navbar-navy',
+    'classes_topnav_nav' => 'navy-expand',
     'classes_topnav_container' => 'container',
 
     /*
@@ -149,11 +128,11 @@ return [
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
-    'sidebar_collapse_remember_no_transition' => true,
+    'sidebar_collapse_remember_no_transition' => false,//sidebar
     'sidebar_scrollbar_theme' => 'os-theme-dark',
     'sidebar_scrollbar_auto_hide' => 'l',
-    'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_nav_accordion' => false,//sidebar
+    'sidebar_nav_animation_speed' => 50,
 
     /*
     |--------------------------------------------------------------------------
@@ -169,9 +148,9 @@ return [
 
     'right_sidebar' => false,
     'right_sidebar_icon' => 'fas fa-cogs',
-    'right_sidebar_theme' => 'dark',
-    'right_sidebar_slide' => true,
-    'right_sidebar_push' => true,
+    'right_sidebar_theme' => 'ligth',
+    'right_sidebar_slide' => false,
+    'right_sidebar_push' => false,
     'right_sidebar_scrollbar_theme' => 'os-theme-dark',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
@@ -224,7 +203,7 @@ return [
     |
     */
 
-    'menu' => [
+    'menu' => [ //MODIFCA EL SIDEBAR DE LOS ICONOS DERECHOS
         // Navbar items:
         [
             'type'         => 'navbar-search',
@@ -233,7 +212,7 @@ return [
         ],
         [
             'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
 
         // Sidebar items:
@@ -247,61 +226,25 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'OPCIONES'],
         [
             'text' => 'Usuario',
             'route'  => 'users.index',
             'icon' => 'fa fa-user-md',
         ],
         [
-            'text' => 'Chofer de Bus',
-            'url'  => 'choferes.index',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Lineas de Micro',
+            'route'  => 'lineas.index',
+            'icon' => 'fas fa-vector-square',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+            'text' => 'Micros',
+            'route'  => 'micros.index',
+            'icon' => 'fas fa-bus-alt',
         ],
+        
         ['header' => 'labels'],
         [
             'text'       => 'important',

@@ -5,7 +5,7 @@
 @section('content_header')
 
     <div class="card-header  text-center">
-        <h3><b>Usuarios</b></h3>
+        <h3><b>Líneas de Micro</b></h3>
     </div>
 
 @stop
@@ -13,8 +13,8 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('users.create') }}" class="btn btn-primary btb-sm"><i class="fas fa-user-plus"></i> Crear
-                Usuario</a>
+            <a href="{{ route('lineas.create') }}" class="btn btn-primary btb-sm"><i class="fas fa-linea-plus"></i> Crear
+                Línea de Micro</a>
             {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                 Reporte
             </button> --}}
@@ -31,45 +31,31 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Foto</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">CI</th>
-                        <th scope="col">Rol</th>
+                        <th scope="col">Número de Linea</th>
+                        <th scope="col">Dirección</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    @foreach ($users as $user)
+
+                    @foreach ($lineas as $linea)
                         <tr>
                             <center>
-                                <td>{{ $user->id }}</td>
+                                <td>{{ $linea->id }}</td>
                             </center>
                             <td>
                                 <center>
-                                    <img src="{{ asset($user->foto) }}" class="img-circle" width="50"
+                                    <img src="{{ asset($linea->foto) }}" class="img-circle" width="50"
                                         height="50" />
                                 </center>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->ci }}</td>
-                            @if ($user->cod_admin == 1 && $user->cod_chofer == 1)
-                                <td>Administrador <br></br>Chofer</td>
-                            @endif
-                            @if ($user->cod_admin == 1 && $user->cod_chofer == 0)
-                                <td>Administrador</td>
-                            @endif
-                            @if ($user->cod_admin == 0 && $user->cod_chofer == 1)
-                                <td>Chofer</td>
-                            @endif
-                            <td>
-                                <form action="{{ route('users.destroy', $use    r) }}" method="post">
-                                    <!--<a class="btn btn-warning btn-sm text-light" href="#">-->
-                                    <a class="btn btn-warning btn-sm text-light rounded-pill"
-                                        href="{{ route('users.show', $user->id) }}">
-                                        <i class="fas fa-eye"></i></a>
+                            <td>{{ $linea->numero }}</td>
+                            <td>{{ $linea->direccion }}</td>
 
-                                    <a href="{{ route('users.edit', $user->id) }}"
+                            <td>
+                                <form action="{{ route('lineas.destroy', $linea->id) }}" method="post">
+
+                                    <a href="{{ route('lineas.edit', $linea->id) }}"
                                         class="btn btn-primary btn-sm text-light rounded-pill">
                                         <i class="fas fa-edit"></i><a>
                                             @csrf
@@ -101,7 +87,7 @@
                         aria-hidden="true">&times;</span></button>
             </div>
 
-            <form action="{{route('users.reporte')}}" method="POST">
+            <form action="{{route('lineas.reporte')}}" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
