@@ -41,7 +41,7 @@ class UsersSeeder extends Seeder
         $user=new User() ;
         $user->name='Takeshi Kanashiro';
         $user->email='take@gmail.com';
-        $user->foto='https://www.superprof.co/imagenes/anuncios/profesor-home-clases-frances-portugues-para-todas-las-personas-mexicanas-deseen-aprender-esos-bonitos-prodigiosos-idiomas.jpg';
+        $user->foto='https://www.supeimage.pngrprof.co/imagenes/anuncios/profesor-home-clases-frances-portugues-para-todas-las-personas-mexicanas-deseen-aprender-esos-bonitos-prodigiosos-idiomas.jpg';
         $user->password=('1234');
         $user->ci=8948057;
         $user->fecha_nac='1991-01-17';

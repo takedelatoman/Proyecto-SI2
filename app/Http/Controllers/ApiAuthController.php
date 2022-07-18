@@ -25,13 +25,5 @@ class ApiAuthController extends Controller
 
         }
     }
-    public function GetUser()
-    {
-
-       $user= DB::select('SELECT user.*
-       FROM User,Micro,Linea WHERE user.id = micro.id_user');
-      return $user ;
-
-    }
     //
 }
